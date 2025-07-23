@@ -1,123 +1,77 @@
-//Interfaces uses implements
 
-// multiple interfaces (Add and Sub) to provide functionality for both addition and subtraction operations.
-
-
+//LOOPS
+//for loop
 import java.io.*;
-// Add interface
-interface Add{
-    int add(int a,int b);
-}
-// Sub interface
-interface Sub{
-    int sub(int a,int b);
-}
-// Calculator class implementing
-// Add and Sub 
-class Cal implements Add , Sub
-{
-    // Method to add two numbers
-    public int add(int a,int b){
-        return a+b;
-    }
-  
-    // Method to sub two numbers
-    public int sub(int a,int b){
-        return a-b;
-    }
-  
-}
 class Day_12{
-    // Main Method
-    public static void main (String[] args) 
+    public static void main(String[]args){
+        for (int i=0;i<=5;i++){   //from 0 to 5
+            System.out.println(i+"");
+        }
+    }
+}
+
+
+//2
+// Java program to demonstrate 
+// the working of for each loop
+import java.io.*;
+
+class  Day_12 {
+    public static void main(String[] args)
     {
-        // instance of Cal class
-        Cal x = new Cal();
-      
-        System.out.println("Addition : " + x.add(2,1));
-        System.out.println("Substraction : " + x.sub(2,1));
-      
+        String[] names = { "Sweta", "Gudly", "Amiya" };
+
+        for (String name : names) {
+            System.out.println("Name: " + name);
+        }
     }
 }
 
 
-//Default
-// interfaces can have methods from JDK 1.8 onwards
-interface TestInterface
-{
-    final int a = 10;
-    
-  	default void display() {
-        System.out.println("hello");
+// While loop - check the condition before executing the loop body.
+import java.io.*;
+class Day_12{
+    public static void main(String[]args){
+        int i = 0;
+        while(i<=10){
+        System.out.println(i +" ");
+        i++;
     }
 }
-
-// A class that implements the interface.
-class TestClass implements TestInterface
-{
-    // Driver Code
-  	public static void main (String[] args) {
-        TestClass t = new TestClass();
-        t.display();
-    }
 }
 
 
-//Static
-interface TestInterface
-{
-    final int a = 10;
-    static void display()
-    {
-        System.out.println("hello");
-    }
-}
-
-// A class that implements the interface.
-class TestClass implements TestInterface
-{
-    // Driver Code
-    public static void main (String[] args)
-    {
-        TestInterface.display();
+//Do-while
+import java.io.*;
+class Day_12{
+    public static void main(String[]args){
+        int i=0;
+        do{
+            System.out.println(i+"");
+            i++;
+        }while(i<5); 
     }
 }
 
 
-//Private
-interface Vehicle {
-    // Private method for internal use
-    private void startEngine() {
-        System.out.println("Engine started.");
-    }
-    
-    // Default method that uses the private method
-    default void drive() {
-         // Calls the private method
-        startEngine(); 
-        System.out.println("Vehicle is now driving.");
-    }
-}
+//For-each
+// Java Program to Iterate through an array
+// Using for-each loop
+import java.io.*;
 
-class Car implements Vehicle {
-    // Car class implements Vehicle interface and inherits the default method 'drive'
-}
-
-public class Day_12 {
+class Geeks {
+  
     public static void main(String[] args) {
-        Car car = new Car();
-        // This will call the default method, which in turn calls the private method
-        car.drive();  
+      
+        // Array declaration
+        int arr[] = { 1, 2, 3, 4, 5 };
+        
+        // Using for-each loop to 
+        // print each element
+        for (int e : arr) {
+            System.out.print(e + " ");
+        }
     }
 }
 
 
-/* Functional
- This example demonstrates the use of a functional interface in Java, which contains
-  exactly one abstract method and can be used with lambda expressions or method references.*/
-
-
-@FunctionalInterface
-interface MyFunctionalInterface {
-    void singleAbstractMethod();
-}
